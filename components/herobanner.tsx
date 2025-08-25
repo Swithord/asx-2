@@ -1,5 +1,5 @@
 import { Separator } from "./ui/separator"
-import banner from '../assets/banner.jpg';
+// Use a public URL for the image (place banner.jpg in public/ or public/assets/)
 
 
 export default function HeroBanner() {
@@ -8,10 +8,10 @@ export default function HeroBanner() {
         <div
             className="w-full h-48 md:h-96 pt-2 flex relative"
             style={{
-            backgroundImage: `url(${banner.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-            }}
+                backgroundImage: `url('banner.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+                }}
         >
             <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 flex flex-col gap-2">
                 <h1 className="text-3xl md:text-5xl font-bold">
