@@ -93,15 +93,20 @@ export default function Speakers() {
                         imageUrl={speaker.imageUrl}
                     />
                 ))} */}
-            <div className="flex gap-10">
-                {speakers.map((speaker, index) => (
-                    <Speaker
-                        key={index}
-                        name={speaker.name}
-                        bio={speaker.bio}
-                        imageUrl={speaker.imageUrl}
-                    />
-                ))}
+            <div className="w-full overflow-x-auto" role="region" aria-label="Past speakers carousel">
+                <div className="w-full flex justify-center">
+                    <div className="inline-flex gap-10 px-2 pb-4">
+                        {speakers.map((speaker, index) => (
+                            <div key={index} className="flex-none">
+                                <Speaker
+                                    name={speaker.name}
+                                    bio={speaker.bio}
+                                    imageUrl={speaker.imageUrl}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
             
         </div>

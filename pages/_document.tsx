@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>UofT Astronomy & Space Exploration Association</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className="antialiased">
