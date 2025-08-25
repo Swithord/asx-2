@@ -10,7 +10,7 @@ export default function About() {
     <div className='max-w-7xl mx-auto'>
       <div className='container flex flex-col items-center justify-between min-h-screen mx-auto gap-5 sm:gap-10 md:gap-15'>
         <Navbar />
-        <div className='flex-grow flex flex-col gap-5 sm:gap-10 md:gap-15'>
+        <div className='flex-grow flex flex-col gap-5 px-4 sm:gap-10 md:gap-15'>
             <div className="w-full flex justify-center items-center max-h-128">
                 <div className="w-full max-w-[1280px]">
                     <Image

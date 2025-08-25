@@ -94,10 +94,10 @@ export default function Speakers() {
                     />
                 ))} */}
             <div className="w-full overflow-x-auto" role="region" aria-label="Past speakers carousel">
-                <div className="w-full flex justify-center">
-                    <div className="inline-flex gap-10 px-2 pb-4">
+                <div className="w-full overflow-x-auto">
+                    <div className="inline-flex gap-5 w-max mx-auto sm:flex">
                         {speakers.map((speaker, index) => (
-                            <div key={index} className="flex-none">
+                            <div key={index} className="flex flex-col items-center justify-center">
                                 <Speaker
                                     name={speaker.name}
                                     bio={speaker.bio}

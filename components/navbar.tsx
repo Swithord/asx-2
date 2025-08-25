@@ -1,10 +1,18 @@
 
 import Image from 'next/image';
 import logo from '../assets/asx_logo.jpg';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function ASXNavbar() {
     return (
-        <nav className="bg-transparent text-white px-8 py-4 flex items-center gap-10 justify-between md:justify-center">
+        <nav className="bg-transparent text-white px-8 py-4 flex items-center gap-10 justify-between md:justify-center w-full">
             <a href="/" className="flex items-center">
                 <Image
                     src={logo}
@@ -14,16 +22,41 @@ export default function ASXNavbar() {
                     height={40}
                 />
             </a>
-            <button
-                className="text-white focus:outline-none md:hidden"
-                aria-label="Toggle navigation"
-                onClick={() => {
-                    const menu = document.getElementById("navbar-menu");
-                    if (menu) menu.classList.toggle("hidden");
-                }}
-            >
-                ☰
-            </button>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <button
+                        className="text-white text-2xl focus:outline-none md:hidden"
+                        aria-label="Open navigation menu"
+                    >
+                        ☰
+                    </button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent
+                    align="end"
+                    sideOffset={8}
+                    className="md:hidden bg-gray-950 text-white min-w-[160px] p-2"
+                >
+                    <DropdownMenuLabel className="text-sm text-secondary">Navigation</DropdownMenuLabel>
+                    <DropdownMenuSeparator className="my-1 border-gray-700" />
+
+                    <DropdownMenuItem asChild>
+                        <a href="/" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Home</a>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem asChild>
+                        <a href="/events" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Events</a>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem asChild>
+                        <a href="/sponsor" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Sponsorship</a>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem asChild>
+                        <a href="/about" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">About</a>
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
             <div
                 id="navbar-menu"
                 className="hidden md:flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4"
