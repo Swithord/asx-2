@@ -1,4 +1,5 @@
 import { Separator } from "./ui/separator"
+import banner from '../assets/banner.jpg';
 
 
 export default function HeroBanner() {
@@ -7,7 +8,7 @@ export default function HeroBanner() {
         <div
             className="w-full h-48 md:h-96 pt-2 flex relative"
             style={{
-            backgroundImage: `url(/banner.jpg)`,
+            backgroundImage: `url(${banner.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
             }}

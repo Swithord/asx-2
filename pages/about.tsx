@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 export default function About() {
   return (
     <div className='max-w-7xl mx-auto'>
-      <div className='container flex flex-col items-center justify-between min-h-screen px-4 py-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
+      <div className='container flex flex-col items-center justify-between min-h-screen mx-auto gap-5 sm:gap-10 md:gap-15'>
         <Navbar />
         <div className='flex-grow flex flex-col gap-5 sm:gap-10 md:gap-15'>
             <div className="w-full flex justify-center items-center max-h-128">
