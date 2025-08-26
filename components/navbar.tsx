@@ -73,6 +73,9 @@ export default function ASXNavbar() {
                 <a href="/about" className="text-xl hover:text-gray-300">
                     About
                 </a>
+                <a href="/links" className="text-xl hover:text-gray-300">
+                    Links
+                </a>
             </div>
         </nav>
     );

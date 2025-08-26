@@ -170,7 +170,7 @@ export default function Sponsor() {
               </a>
             </div>
             <div className='text-lg md:text-xl'>
-                We accept payment in the form of cheques and electronic deposits. <a className='bg-secondary text-black p-1' href='/contact'>Contact us</a> and we will provide the required information!
+                We accept payment in the form of cheques and electronic deposits. <a className='bg-secondary text-black p-1' href='/links'>Contact us</a> and we will provide the required information!
               </div>
           <Footer />
         </div>

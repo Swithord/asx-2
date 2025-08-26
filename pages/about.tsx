@@ -4,6 +4,8 @@ import asx2425 from '../assets/asx2425.jpeg';
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import telescope from '../assets/telescope.svg';
+import planet from '../assets/planet.svg';
+import { Button } from "@/components/ui/button";
 
 
 export default function About() {
@@ -32,13 +34,13 @@ export default function About() {
                 </div>
                 
             </div>
-            {/* <Image
-                src={telescope}
-                alt="Telescope"
+            <Image
+                src={planet}
+                alt="Planet"
                 className="object-cover w-8 h-8 filter brightness-0 invert"
                 width={30}
                 height={30}
-            /> */}
+            />
             <div className='flex flex-col gap-5 w-full'>
                 <div className='text-lg md:text-xl'>
                     ASX is a non-profit organization run by the University of Toronto undergraduate space community.
@@ -52,9 +54,12 @@ export default function About() {
                        ASX relies heavily on external sponsorships in order to continue informing today's society about astronomy and space exploration. By sponsoring us, you or your company can be involved with a non-profit organization that strives to share the excitement of space with the public!
                     </div>
                 </div>
-                <div>
+                <div className='flex flex-col gap-3 items-center md:max-w-1/4'>
                     <div className='text-xl md:text-2xl text-primary'>
                         Want to stay updated?
+                    </div>
+                    <div className='text-lg md:text-xl text-center'>
+                        <a href="/subscribe" className="bg-secondary text-black p-1">Subscribe to our Newsletter</a> to stay updated on our events and announcements. We send out emails once a month, and you can unsubscribe at any time.
                     </div>
                 </div>
                 <div className='flex flex-col gap-3 items-center md:max-w-1/4'>
