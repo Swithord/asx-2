@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GetServerSideProps } from "next";
 import HeroBanner from "@/components/herobanner";
 import Mission from "@/components/mission";
 import Latest from "@/components/latest";
@@ -8,16 +9,20 @@ import AboutUs from "@/components/aboutus";
 import Speakers from "@/components/speakers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { fetchNews, Article } from "./api/news";
 
+interface HomeProps {
+  news: Article[];
+}
 
-export default function Home() {
+export default function Home({ news }: HomeProps) {
   return (
     <div className='max-w-7xl mx-auto'>
       <Navbar />
       <div className='container flex flex-col items-center justify-center min-h-screen px-4 py-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
       <HeroBanner />
             <Mission />
-            <Latest />
+            <Latest news={news} />
             <Events />
             <AboutUs />
             <Speakers />
@@ -30,3 +35,21 @@ export default function Home() {
 
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const newsData = await fetchNews(3);
+    return {
+      props: {
+        news: newsData.items,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    return {
+      props: {
+        news: [],
+      },
+    };
+  }
+};
