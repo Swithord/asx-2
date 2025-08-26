@@ -59,7 +59,7 @@ export default function About() {
                         Want to stay updated?
                     </div>
                     <div className='text-lg md:text-xl text-center'>
-                        <a href="/subscribe" className="bg-secondary text-black p-1">Subscribe to our Newsletter</a> to stay updated on our events and announcements. We send out emails once a month, and you can unsubscribe at any time.
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform" className="bg-secondary text-black p-1">Subscribe to our Newsletter</a> to stay updated on our events and announcements. We send out emails once a month, and you can unsubscribe at any time.
                     </div>
                 </div>
                 <div className='flex flex-col gap-3 items-center md:max-w-1/4'>

@@ -55,6 +55,9 @@ export default function ASXNavbar() {
                     <DropdownMenuItem asChild>
                         <a href="/about" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">About</a>
                     </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                        <a href="/links" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Links</a>
+                    </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
             <div

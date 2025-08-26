@@ -19,8 +19,10 @@ export default function About() {
         <div className='max-w-7xl mx-auto'>
             <div className='container flex flex-col items-center justify-between min-h-screen mx-auto gap-5 sm:gap-10 md:gap-15'>
                 <Navbar />
+                <div className='text-2xl md:text-3xl'>ASX Links</div>
                 <div className='w-full flex-col sm:flex-row flex-grow flex gap-5 px-4 sm:gap-10 md:gap-15 justify-center'>
-                    <div className='flex flex-col h-full w-full md:w-1/3 items-center self-start justify-start'>
+                    <div className='flex flex-col h-full w-full lg:w-1/3 items-center self-start justify-start'>
+                        <a href='https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform' className='bg-primary p-3 rounded rounded-lg text-lg text-black text-center md:text-xl'>Become a Member / Subscribe to our Newsletter!</a>
                         <div className='flex flex-col gap-5 w-full items-center pt-10'>
                             <div className='absolute -translate-y-1/2 z-10 px-4 bg-black'>
                                 <div className='text-xl md:text-2xl'>Contact Us</div>
@@ -61,7 +63,7 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://www.instagram.com/your-instagram-link" className='bg-secondary text-black p-1'>Instagram</a>
+                                    <a href="https://www.instagram.com/asx_uoft/" className='bg-secondary text-black p-1'>Instagram</a>
                                 </div>
                                 <div className='flex gap-3 w-full items-center'>
                                     <Image
@@ -71,7 +73,7 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://www.linkedin.com/your-linkedin-link" className='bg-secondary text-black p-1'>LinkedIn</a>
+                                    <a href="https://www.linkedin.com/company/asx-society/" className='bg-secondary text-black p-1'>LinkedIn</a>
                                 </div>
                                 <div className='flex gap-3 w-full items-center'>
                                     <Image
@@ -81,7 +83,7 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://www.facebook.com/your-facebook-link" className='bg-secondary text-black p-1'>Facebook</a>
+                                    <a href="https://www.facebook.com/ASXAssoc" className='bg-secondary text-black p-1'>Facebook</a>
                                 </div>
                                 <div className='flex gap-3 w-full items-center'>
                                     <Image
@@ -91,13 +93,13 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://www.youtube.com/your-youtube-link" className='bg-secondary text-black p-1'>YouTube</a>
+                                    <a href="https://www.youtube.com/@astronomyandspaceexplorati5753" className='bg-secondary text-black p-1'>YouTube</a>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div className='flex flex-col h-full w-full md:w-1/3 items-center self-start justify-start'>
+                    <div className='flex flex-col h-full w-full lg:w-1/3 items-center self-start justify-start'>
                         <div className='flex flex-col gap-5 w-full items-center pt-10'>
                             <div className='absolute -translate-y-1/2 z-10 px-4 bg-black'>
                                 <div className='text-xl md:text-2xl'>Astronomy Resources</div>

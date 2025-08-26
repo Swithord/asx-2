@@ -1,6 +1,7 @@
 import asxlogo from '../assets/asx_logo.jpg';
 import Image from 'next/image';
 import { Separator } from './ui/separator';
+import { Badge } from './ui/badge';
 
 export default function Footer() {
 
@@ -17,6 +18,12 @@ export default function Footer() {
                     <div className='flex flex-col gap-3 items-center justify-center'>
                         <div className='text-md md:text-lg'> Stay Updated </div>
                         <Separator orientation='horizontal' />
+                        <div className='flex items-center gap-2'>
+                            <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
+                                Discord
+                            </a>
+                            <Badge variant={'default'} className='text-sm bg-white text-black'>New!</Badge>
+                        </div>
                         <div>
                             <a href="https://www.facebook.com/ASXAssoc" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                                 Facebook
