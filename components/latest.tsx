@@ -92,7 +92,7 @@ export default function Latest({ news }: LatestProps) {
             </div>
             
             {/* View All News Button */}
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center">
                 <Link 
                     href="/news"
                     className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/90 to-primary hover:from-primary hover:to-primary/80 text-black text-lg md:text-xl rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 active:scale-95"
