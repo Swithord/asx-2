@@ -15,25 +15,25 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className='flex flex-col gap-3 items-center justify-center'>
-                        <div className='text-xl'> Stay Updated </div>
+                        <div className='text-md md:text-lg'> Stay Updated </div>
                         <Separator orientation='horizontal' />
                         <div>
-                            <a href="https://www.facebook.com/ASXAssoc" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
+                            <a href="https://www.facebook.com/ASXAssoc" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                                 Facebook
                             </a>
                         </div>
                         <div>
-                            <a href="https://www.instagram.com/asx_uoft/" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
+                            <a href="https://www.instagram.com/asx_uoft/" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                             Instagram
                             </a>
                         </div>
                         <div>
-                            <a href="https://www.linkedin.com/company/asx-society/" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
+                            <a href="https://www.linkedin.com/company/asx-society/" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                             LinkedIn
                             </a>
                         </div>
                         <div>
-                           <a href="https://www.youtube.com/@astronomyandspaceexplorati5753" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
+                           <a href="https://www.youtube.com/@astronomyandspaceexplorati5753" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                             YouTube
                             </a> 
                         </div>
@@ -41,14 +41,14 @@ export default function Footer() {
                     </div>
                     <div className="flex-col justify-between hidden sm:flex">
                         <div>
-                            <div className='text-xl'>Sign up and access our newsletter</div>
+                            <div className='text-md md:text-lg'>Sign up and access our newsletter</div>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
                             Membership Registration Form
                             </a>
                         </div>
                         <div>
-                            <div className='text-lg'>21 Sussex Ave, Toronto, Ontario M5S 1J6, CA</div>
-                            <div className='text-lg'>space.association.utasx@gmail.com</div>
+                            <div className='text-md md:text-lg'>21 Sussex Ave, Toronto, Ontario M5S 1J6, CA</div>
+                            <div className='text-md md:text-lg'>space.association.utasx@gmail.com</div>
                         </div>
                         
                     </div>

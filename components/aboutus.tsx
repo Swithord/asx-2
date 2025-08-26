@@ -10,7 +10,7 @@ import {
 
 function StatisticsCard({ number, text }: { number: string; text: string }) {
     return (
-        <Card className="w-36 h-full lg:w-48 text-center bg-transparent border-3 border-gray-700">
+        <Card className="w-36 h-full lg:w-48 text-center bg-transparent border-1 border-gray-700">
             <CardHeader>
                 <CardTitle className="text-xl lg:text-3xl text-primary">{number}</CardTitle>
             </CardHeader>

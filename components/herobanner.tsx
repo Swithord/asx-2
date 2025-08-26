@@ -31,7 +31,7 @@ export default function HeroBanner() {
                 <div className="text-lg w-full text-center">
                     Image of the Month
                 </div>
-                <div className='text-center border-2 border-gray-700 rounded-md p-2 w-full'>
+                <div className='text-center border-1 border-gray-700 rounded-md p-2 w-full'>
                 <div className='text-lg'>M16 - Eagle Nebula</div>
                 <div>Credit: York</div>
                 </div>
