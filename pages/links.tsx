@@ -19,7 +19,7 @@ export default function About() {
         <div className='max-w-7xl mx-auto'>
             <div className='container flex flex-col items-center justify-between min-h-screen mx-auto gap-5 sm:gap-10 md:gap-15'>
                 <Navbar />
-                <div className='text-2xl md:text-3xl'>ASX Links</div>
+                <div className='text-3xl md:text-4xl'>ASX Links</div>
                 <div className='w-full flex-col sm:flex-row flex-grow flex gap-5 px-4 sm:gap-10 md:gap-15 justify-center'>
                     <div className='flex flex-col h-full w-full lg:w-1/3 items-center self-start justify-start'>
                         <a href='https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform' className='bg-primary p-3 rounded rounded-lg text-lg text-black text-center md:text-xl'>Become a Member / Subscribe to our Newsletter!</a>
