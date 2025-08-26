@@ -46,21 +46,24 @@ export default function Latest({ news }: LatestProps) {
     return (
         <div className="container flex flex-col gap-5">
             <h1 className="text-3xl md:text-4xl">Latest</h1>
-            <div className='flex gap-5'>
+            <div className="flex gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:-mx-4 px-4 md:px-0 py-2">
                 {news.map((item) => (
-                <div key={item.key} className="flex border border-gray-700 rounded-lg p-5 transform transition-transform duration-200 ease-out hover:scale-105 hover:shadow-lg hover:-translate-y-1 hover:z-10 cursor-pointer">
-                    <div className='flex flex-col justify-between'>
-                        <div className="w-[100px] h-[100px] overflow-hidden flex-shrink-0">
-                            <Image src={item.bannerUrl} alt={item.title} width={100} height={100} className="object-cover" />
+                    <div
+                        key={item.key}
+                        className="min-w-[260px] md:min-w-0 snap-start flex border border-gray-700 rounded-lg p-5 transform transition-transform duration-200 ease-out hover:scale-105 hover:shadow-lg hover:-translate-y-1 hover:z-10 cursor-pointer"
+                    >
+                        <div className="flex flex-col justify-between">
+                            <div className="w-[100px] h-[100px] overflow-hidden flex-shrink-0">
+                                <Image src={item.bannerUrl} alt={item.title} width={100} height={100} className="object-cover" />
+                            </div>
+                            <div className="text-base text-secondary">{formatTimestamp(item.timestamp)}</div>
                         </div>
-                        <div className='text-base text-secondary'>{formatTimestamp(item.timestamp)}</div>
+                        <div className="flex flex-col gap-3 ml-4">
+                            <div className="text-xl md:text-2xl">{item.title}</div>
+                            <p className="text-lg md:text-xl">{item.content}</p>
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-3 ml-4'>
-                        <div className="text-xl md:text-2xl">{item.title}</div>
-                        <p className="text-lg md:text-xl">{item.content}</p>
-                    </div>
-                </div>
-            ))}
+                ))}
             </div>
         </div>
     )
