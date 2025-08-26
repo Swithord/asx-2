@@ -45,7 +45,7 @@ export default function ASXNavbar() {
                     </DropdownMenuItem>
 
                     <DropdownMenuItem asChild>
-                        <a href="/events" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Events</a>
+                        <a href="/news" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">News</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem asChild>
@@ -67,8 +67,8 @@ export default function ASXNavbar() {
                 <a href="/" className="text-xl hover:text-gray-300">
                     Home
                 </a>
-                <a href="/events" className="text-xl hover:text-gray-300">
-                    Events
+                <a href="/news" className="text-xl hover:text-gray-300">
+                    News
                 </a>
                 <a href="/sponsor" className="text-xl hover:text-gray-300">
                     Sponsorship
