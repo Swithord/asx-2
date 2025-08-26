@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
 
 
 export default function Sponsor() {
@@ -68,7 +69,7 @@ export default function Sponsor() {
           </div>
           <div className='text-2xl md:text-4xl'>Our 2025-26 Sponsors</div>
           <div className="w-full max-w-3xl border rounded-lg border-gray-700 p-6 sm:p-8 flex gap-6 items-start">
-            <div className="h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden flex-shrink-0">
+            <div className="w-12 h-12 md:w-28 md:h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden flex-shrink-0">
               <img
                 src={dunlap?.src ?? dunlap}
                 alt="Dunlap Institute for Astronomy & Astrophysics"
@@ -163,6 +164,14 @@ export default function Sponsor() {
                 </Table>
               </div>
             </div>
+            <div className="w-full max-w-3xl flex justify-center">
+              <a href="/sponsorship.pdf" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary text-black text-lg md:text-xl p-6">Full Sponsorship Package</Button>
+              </a>
+            </div>
+            <div className='text-lg md:text-xl'>
+                We accept payment in the form of cheques and electronic deposits. <a className='bg-secondary text-black p-1' href='/contact'>Contact us</a> and we will provide the required information!
+              </div>
           <Footer />
         </div>
       </div>
