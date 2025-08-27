@@ -20,7 +20,7 @@ interface EventCardProps {
 }
 
 const EventCard = ({ image, title, description }: EventCardProps) => (
-    <Card className="w-full relative overflow-hidden h-72 sm:h-48 md:h-72 border-3 border-gray-700">
+    <Card className="w-full relative overflow-hidden h-72 sm:h-48 md:h-72 border-1 border-gray-700">
         <Image
             src={image}
             alt={title}

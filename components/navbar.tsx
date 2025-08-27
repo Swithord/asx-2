@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import logo from '../assets/asx_logo.jpg';
+import logo from '../assets/asx_logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,

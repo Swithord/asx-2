@@ -1,4 +1,4 @@
-import asxlogo from '../assets/asx_logo.jpg';
+import asxlogo from '../assets/asx_logo.png';
 import Image from 'next/image';
 import { Separator } from './ui/separator';
 import { Badge } from './ui/badge';

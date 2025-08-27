@@ -19,7 +19,7 @@ export default function Home({ news }: HomeProps) {
   return (
     <div className='max-w-7xl mx-auto'>
       <Navbar />
-      <div className='container flex flex-col items-center justify-center min-h-screen px-4 py-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
+      <div className='container flex flex-col items-center justify-center min-h-screen px-4 pb-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
       <HeroBanner />
             <Mission />
             <Latest news={news} />

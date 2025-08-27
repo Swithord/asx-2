@@ -158,4 +158,28 @@ body {
     -webkit-line-clamp: 4;
     line-clamp: 4;
   }
+
+  /* Custom scrollbar styles */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom animation for glowing effect */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 150, 144, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 150, 144, 0.6), 0 0 60px rgba(220, 191, 217, 0.4);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
 }
