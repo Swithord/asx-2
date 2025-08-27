@@ -7,6 +7,8 @@ import luigigallo from '../assets/luigigallo.webp'
 import adityavijaykumar from '../assets/adityavijaykumar.jpg'
 import abigailfraeman from '../assets/abigailfraeman.jpg'
 import richardbond from '../assets/richardbond.jpg'
+import brucejakosky from '../assets/brucejakosky.jpg'
+import lynnrothschild from '../assets/lynnrothschild.webp'
 
 import { StaticImageData } from 'next/image';
 import { Separator } from './ui/separator';
@@ -96,6 +98,16 @@ export default function Speakers() {
             bio: 'Astrophysicist',
             imageUrl: adityavijaykumar
         },
+        {
+            name: 'Bruce Jakosky',
+            bio: 'Geologist',
+            imageUrl: brucejakosky
+        },
+        {
+            name: 'Lynn Rothschild',
+            bio: 'Astrobiologist',
+            imageUrl: lynnrothschild
+        }
     ];
     const settings = {
         dots: true,
