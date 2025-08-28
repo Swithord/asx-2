@@ -15,7 +15,7 @@ function StatisticsCard({ number, text }: { number: string; text: string }) {
                 <CardTitle className="text-xl lg:text-3xl text-primary">{number}</CardTitle>
             </CardHeader>
             <CardContent>
-                <CardDescription className="text-lg lg:text-xl text-white">{text}</CardDescription>
+                <CardDescription className="text-lg lg:text-xl text-foreground">{text}</CardDescription>
             </CardContent>
         </Card>
     );

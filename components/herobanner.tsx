@@ -6,7 +6,7 @@ export default function HeroBanner() {
 
     return (
         <div
-            className="w-full h-48 md:h-96 pt-2 flex relative"
+            className="w-full h-48 md:h-96 pt-2 flex relative text-white"
             style={{
                 backgroundImage: `url('banner.jpg')`,
                 backgroundSize: 'cover',

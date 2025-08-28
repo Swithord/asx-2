@@ -4,8 +4,7 @@ import asx2425 from '../assets/asx2425.jpeg';
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import telescope from '../assets/telescope.svg';
-import planet from '../assets/planet.svg';
-import { Button } from "@/components/ui/button";
+import { MoonStar, Star, Telescope } from "lucide-react";
 
 
 export default function About() {
@@ -26,7 +25,7 @@ export default function About() {
                 </div>
             </div>
             <div className='flex flex-col gap-5 w-full items-center'>
-                <div className='absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-4 bg-black'>
+                <div className='absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-4 bg-background'>
                   <div className='text-3xl md:text-4xl'>Our Mission</div>
                 </div>
                <div className='border rounded-lg border-gray-700 p-6 sm:p-8 pt-10'>
@@ -34,13 +33,14 @@ export default function About() {
                 </div>
                 
             </div>
-            <Image
+            {/* <Image
                 src={planet}
                 alt="Planet"
-                className="object-cover w-8 h-8 filter brightness-0 invert"
+                className="object-cover w-8 h-8 text-primary"
                 width={30}
                 height={30}
-            />
+            /> */}
+            <MoonStar className="w-8 h-8 text-gray-500" />
             <div className='flex flex-col gap-5 w-full'>
                 <div className='text-lg md:text-xl'>
                     ASX is a non-profit organization run by the University of Toronto undergraduate space community.
@@ -59,7 +59,7 @@ export default function About() {
                         Want to stay updated?
                     </div>
                     <div className='text-lg md:text-xl text-center'>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform" className="bg-secondary text-black p-1">Subscribe to our Newsletter</a> to stay updated on our events and announcements. We send out emails once a month, and you can unsubscribe at any time.
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform" className="bg-secondary text-background p-1">Subscribe to our Newsletter</a> to stay updated on our events and announcements. We send out emails once a month, and you can unsubscribe at any time.
                     </div>
                 </div>
                 <div className='flex flex-col gap-3 items-center md:max-w-1/4'>
@@ -69,13 +69,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <Image
-                src={telescope}
-                alt="Telescope"
-                className="object-cover w-8 h-8 filter brightness-0 invert"
-                width={30}
-                height={30}
-            />
+            <Telescope className="w-8 h-8 text-gray-500" />
             <div className='flex flex-col gap-5 w-full items-center'>
                 <div className='text-3xl md:text-4xl'>Meet the Team</div>
                 <Separator orientation="horizontal" className="bg-secondary" style={{ width: '25%' }} />

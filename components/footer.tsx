@@ -22,7 +22,7 @@ export default function Footer() {
                             <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                                 Discord
                             </a>
-                            <Badge variant={'default'} className='text-sm bg-white text-black'>New!</Badge>
+                            <Badge variant={'default'} className='text-sm bg-foreground text-background'>New!</Badge>
                         </div>
                         <div>
                             <a href="https://www.facebook.com/ASXAssoc" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">

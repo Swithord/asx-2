@@ -12,7 +12,7 @@ import {
 
 export default function ASXNavbar() {
     return (
-        <nav className="bg-transparent text-white px-8 py-4 flex items-center gap-10 justify-between md:justify-center w-full">
+        <nav className="bg-transparent text-foreground px-8 py-4 flex items-center gap-10 justify-between md:justify-center w-full">
             <a href="/" className="flex items-center">
                 <Image
                     src={logo}
@@ -25,7 +25,7 @@ export default function ASXNavbar() {
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <button
-                        className="text-white text-2xl focus:outline-none md:hidden"
+                        className="text-foreground text-3xl focus:outline-none md:hidden"
                         aria-label="Open navigation menu"
                     >
                         ☰
@@ -35,7 +35,7 @@ export default function ASXNavbar() {
                 <DropdownMenuContent
                     align="end"
                     sideOffset={8}
-                    className="md:hidden bg-gray-950 text-white min-w-[160px] p-2"
+                    className="md:hidden bg-gray-950 text-foreground min-w-[160px] p-2"
                 >
                     <DropdownMenuLabel className="text-sm text-secondary">Navigation</DropdownMenuLabel>
                     <DropdownMenuSeparator className="my-1 border-gray-700" />
@@ -50,6 +50,10 @@ export default function ASXNavbar() {
 
                     <DropdownMenuItem asChild>
                         <a href="/sponsor" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Sponsorship</a>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem asChild>
+                        <a href="/membership" className="block w-full px-2 py-2 text-left hover:bg-gray-700 rounded">Membership</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem asChild>
@@ -72,6 +76,9 @@ export default function ASXNavbar() {
                 </a>
                 <a href="/sponsor" className="text-xl hover:text-gray-300">
                     Sponsorship
+                </a>
+                <a href="/membership" className="text-xl hover:text-gray-300">
+                    Membership
                 </a>
                 <a href="/about" className="text-xl hover:text-gray-300">
                     About

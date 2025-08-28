@@ -81,7 +81,7 @@ export default function Sponsor() {
                 Dunlap Institute for Astronomy & Astrophysics
               </div>
               <Badge variant="default" className='bg-primary text-black text-sm'>Neutron Star Sponsor</Badge>
-              <div className="mt-2 text-sm md:text-base text-gray-300">
+              <div className="mt-2 text-sm md:text-base text-gray-500">
                 The Dunlap Institute for Astronomy & Astrophysics at the University of Toronto is an endowed research institute with over 50 faculty, postdocs, students and staff, dedicated to innovative technology, groundbreaking research, world-class training, and public engagement.
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Sponsor() {
               </a>
             </div>
             <div className='text-lg md:text-xl'>
-                We accept payment in the form of cheques and electronic deposits. <a className='bg-secondary text-black p-1' href='/links'>Contact us</a> and we will provide the required information!
+                We accept payment in the form of cheques and electronic deposits. <a className='bg-secondary text-background p-1' href='/links'>Contact us</a> and we will provide the required information!
               </div>
           <Footer />
         </div>
