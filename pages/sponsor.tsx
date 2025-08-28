@@ -121,7 +121,7 @@ export default function Sponsor() {
                       <TableCell className="min-w-0 whitespace-normal break-words">
                         Verbal thank you at our Annual Symposium in February.
                       </TableCell>
-                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
@@ -133,7 +133,7 @@ export default function Sponsor() {
                         Name, logo, and verbal thank you at our student recruitment events in September.
                       </TableCell>
                       <TableCell className="text-center min-w-0" />
-                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
                       <TableCell className="text-center min-w-0">✓</TableCell>
@@ -144,6 +144,39 @@ export default function Sponsor() {
                         Name and logo featured in our printed symposium programme.
                       </TableCell>
                       <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Custom advertisement distributed once per year via our monthly newsletter and social media.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Name and logo included on our printed symposium posters featured around U of T, St. George campus.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Name and logo included on our official banners hung at all of our events.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
                       <TableCell className="text-center min-w-0" />
                       <TableCell className="text-center min-w-0" />
                       <TableCell className="text-center min-w-0">✓</TableCell>
@@ -152,7 +185,40 @@ export default function Sponsor() {
 
                     <TableRow>
                       <TableCell className="min-w-0 whitespace-normal break-words">
-                        Custom advertisement distributed once per year via our monthly newsletter and social media.
+                        Host a booth at one of our events.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Custom advertisement played before and in between our symposium’s lectures.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Logo and verbal thank you featured at every single one of our monthly events.
+                      </TableCell>
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0" />
+                      <TableCell className="text-center min-w-0">✓</TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="min-w-0 whitespace-normal break-words">
+                        Industry exclusivity — we will only accept your sponsorship from all organisations in your industry.
                       </TableCell>
                       <TableCell className="text-center min-w-0" />
                       <TableCell className="text-center min-w-0" />
