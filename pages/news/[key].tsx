@@ -107,9 +107,50 @@ export default function ArticlePage({ article, error }: ArticlePageProps) {
                         </div>
 
                         {/* Article Body */}
-                        <div className="prose prose-lg md:prose-xl prose-invert max-w-none">
-                            <div className="text-lg md:text-xl leading-relaxed whitespace-pre-wrap">
-                                <Markdown>
+                        <div className="markdown-content max-w-none">
+                            <div className="text-lg md:text-xl leading-relaxed">
+                                <Markdown
+                                    components={{
+                                        h1: ({children}) => <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-4 text-foreground">{children}</h1>,
+                                        h2: ({children}) => <h2 className="text-2xl md:text-3xl font-bold mt-6 mb-3 text-foreground">{children}</h2>,
+                                        h3: ({children}) => <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-3 text-foreground">{children}</h3>,
+                                        h4: ({children}) => <h4 className="text-lg md:text-xl font-semibold mt-4 mb-2 text-foreground">{children}</h4>,
+                                        h5: ({children}) => <h5 className="text-base md:text-lg font-semibold mt-3 mb-2 text-foreground">{children}</h5>,
+                                        h6: ({children}) => <h6 className="text-sm md:text-base font-semibold mt-3 mb-2 text-foreground">{children}</h6>,
+                                        p: ({children}) => <p className="mb-4 text-foreground/90 leading-relaxed">{children}</p>,
+                                        a: ({href, children}) => (
+                                            <a 
+                                                href={href} 
+                                                className="text-primary hover:text-primary/80 underline decoration-primary/50 hover:decoration-primary transition-colors duration-200"
+                                                target={href?.startsWith('http') ? '_blank' : undefined}
+                                                rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            >
+                                                {children}
+                                            </a>
+                                        ),
+                                        ul: ({children}) => <ul className="list-disc pl-6 mb-4 space-y-1">{children}</ul>,
+                                        ol: ({children}) => <ol className="list-decimal pl-6 mb-4 space-y-1">{children}</ol>,
+                                        li: ({children}) => <li className="text-foreground/90">{children}</li>,
+                                        blockquote: ({children}) => (
+                                            <blockquote className="border-l-4 border-primary/50 pl-4 py-2 my-4 bg-muted/30 italic text-foreground/90">
+                                                {children}
+                                            </blockquote>
+                                        ),
+                                        code: ({children}) => (
+                                            <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground">
+                                                {children}
+                                            </code>
+                                        ),
+                                        pre: ({children}) => (
+                                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto my-4">
+                                                {children}
+                                            </pre>
+                                        ),
+                                        strong: ({children}) => <strong className="font-bold text-foreground">{children}</strong>,
+                                        em: ({children}) => <em className="italic text-foreground">{children}</em>,
+                                        hr: () => <hr className="my-8 border-border" />,
+                                    }}
+                                >
                                     {article.content}
                                 </Markdown>
                             </div>

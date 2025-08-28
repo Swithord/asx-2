@@ -189,4 +189,40 @@ body {
   .animate-glow {
     animation: glow 2s ease-in-out infinite;
   }
+
+  /* Markdown content styles */
+  .markdown-content {
+    line-height: 1.7;
+  }
+  
+  .markdown-content h1:first-child,
+  .markdown-content h2:first-child,
+  .markdown-content h3:first-child {
+    margin-top: 0;
+  }
+  
+  .markdown-content img {
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  
+  .markdown-content th,
+  .markdown-content td {
+    border: 1px solid var(--border);
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  .markdown-content th {
+    background-color: var(--muted);
+    font-weight: 600;
+  }
 }
