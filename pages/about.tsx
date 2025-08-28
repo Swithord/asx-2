@@ -6,8 +6,34 @@ import { Separator } from "@/components/ui/separator";
 import telescope from '../assets/telescope.svg';
 import { MoonStar, Star, Telescope } from "lucide-react";
 
+interface ExecCardProps {
+  title: string;
+  name: string;
+}
+
+function ExecCard({ title, name }: ExecCardProps) {
+  return (
+    <div className='border rounded-lg border-gray-700 p-5 m-2 w-70 flex flex-col items-center justify-between'>
+      <div className='text-xl md:text-2xl text-primary w-full text-center'>{title}</div>
+      <div className='text-lg md:text-xl text-center w-full'>{name}</div>
+    </div>
+  );
+}
 
 export default function About() {
+    const executiveTeam = [
+        { title: "President", name: "Amy Toms" },
+        { title: "Vice President", name: "York Ng" },
+        { title: "Secretary", name: "Hannah Semple" },
+        { title: "Events Director", name: "Thato Sotashe" },
+        { title: "Symposium Director", name: "Isabella Rivera" },
+        { title: "Symposium Director", name: "Darrell Rosaceña" },
+        { title: "Graphic Designer", name: "Amy Miller" },
+        { title: "Outreach Director", name: "Chris Cheng" },
+        { title: "Webmaster", name: "Zoya Babicheva" },
+        { title: "Photographer", name: "Mirza Ahmed" }
+    ];
+
   return (
     <div className='max-w-7xl mx-auto'>
         <Navbar />
@@ -73,7 +99,12 @@ export default function About() {
             <div className='flex flex-col gap-5 w-full items-center'>
                 <div className='text-3xl md:text-4xl'>Meet the Team</div>
                 <Separator orientation="horizontal" className="bg-secondary" style={{ width: '25%' }} />
-                
+                <div className='flex flex-wrap justify-center'>
+                    {/* Team member cards go here */}
+                    {executiveTeam.map((member) => (
+                        <ExecCard key={member.name} title={member.title} name={member.name} />
+                    ))}
+                </div>
             </div>
         </div>
         <Footer />

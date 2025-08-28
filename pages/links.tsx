@@ -112,23 +112,40 @@ export default function About() {
                     <div className='flex flex-col h-full w-full items-center self-start justify-start'>
                         <div className='flex flex-col gap-5 w-full items-center pt-10'>
                             <div className='absolute -translate-y-1/2 z-10 px-4 bg-background'>
-                                <div className='text-xl md:text-2xl'>Astronomy Resources</div>
+                                <div className='text-xl md:text-2xl'>Astronomy Organizations / Resources</div>
                             </div>
                             <div className='flex flex-col gap-5 border rounded-lg border-gray-700 text-base md:text-lg p-6 sm:p-8 pt-10 items-left w-full'>
                                 <div className='text-lg md:text-xl'>UofT related</div>
-                                <a href="https://astro.utoronto.ca/" className='text-secondary w-fit'>Department of Astronomy & Astrophysics</a>
-                                <li><a href="https://www.astro.utoronto.ca/astrotours/singlepage/discover/#:~:text=On%20the%20first%20Thursday%20of,or%20sign%2Dup%20is%20required." className='text-secondary w-fit'>Public Tours</a></li>
-                                <a href="https://www.dunlap.utoronto.ca/" className='text-secondary w-fit'>Dunlap Institute for Astronomy & Astrophysics</a>
-                                <a href="https://mississauga.rasc.ca/" className='text-secondary w-fit'>Royal Astronomical Society (RASC) @ UofT Mississauga</a>
-                                <a href="https://www.utias.utoronto.ca/" className='text-secondary w-fit'>Institute for Aerospace Studies (UTIAS)</a>
+                                <a href="https://astro.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Department of Astronomy & Astrophysics</a>
+                                <li><a href="https://www.astro.utoronto.ca/astrotours/singlepage/discover/#:~:text=On%20the%20first%20Thursday%20of,or%20sign%2Dup%20is%20required." target="_blank" className='text-secondary w-fit'>Public Tours</a></li>
+                                <a href="https://www.dunlap.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Dunlap Institute for Astronomy & Astrophysics</a>
+                                <a href="https://mississauga.rasc.ca/" target="_blank" className='text-secondary w-fit'>Royal Astronomical Society (RASC) @ UofT Mississauga</a>
+                                <a href="https://www.utias.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Institute for Aerospace Studies (UTIAS)</a>
                                 <div className='text-lg md:text-xl'>Canadian Astronomy & Space Groups</div>
-                                <a href="https://astroatyork.wixsite.com/acyu" className='text-secondary w-fit'>Astronomy Club @ York University</a>
-                                <a href="https://www.casi.ca/" className='text-secondary w-fit'>Canadian Aeronautics & Space Institute (CASI)</a>
-                                <a href="https://www.css.ca/" className='text-secondary w-fit'>Canadian Space Society (CSS)</a>
-                                <a href="https://www.marssociety.ca/" className='text-secondary w-fit'>Mars Society of Canada</a>
-                                <a href="https://www.nyaa.ca/" className='text-secondary w-fit'>North York Astronomical Association</a>
-                                <a href="https://rasc.ca/" className='text-secondary w-fit'>Royal Astronomical Society of Canada (RASC)</a>
-                                <a href="https://toronto.rasc.ca/" className='text-secondary w-fit'>RASC Toronto Centre</a>
+                                <a href="https://astroatyork.wixsite.com/acyu" target="_blank" className='text-secondary w-fit'>Astronomy Club @ York University</a>
+                                <a href="https://www.casi.ca/" target="_blank" className='text-secondary w-fit'>Canadian Aeronautics & Space Institute (CASI)</a>
+                                <a href="https://www.css.ca/" target="_blank" className='text-secondary w-fit'>Canadian Space Society (CSS)</a>
+                                <a href="https://www.marssociety.ca/" target="_blank" className='text-secondary w-fit'>Mars Society of Canada</a>
+                                <a href="https://www.nyaa.ca/" target="_blank" className='text-secondary w-fit'>North York Astronomical Association</a>
+                                <a href="https://rasc.ca/" target="_blank" className='text-secondary w-fit'>Royal Astronomical Society of Canada (RASC)</a>
+                                <a href="https://toronto.rasc.ca/" target="_blank" className='text-secondary w-fit'>RASC Toronto Centre</a>
+                                <div className='text-lg md:text-xl'>Other Resources</div>
+                                <a href="https://www.asc-csa.gc.ca/eng/default.asp" target="_blank" className='text-secondary w-fit'>Canadian Space Agency (CSA)</a>
+                                <a href="https://www.astronomerswithoutborders.org/" target="_blank" className='text-secondary w-fit'>Astronomers without Borders</a>
+                                <a href="https://www.planetary.org/" target="_blank" className='text-secondary w-fit'>The Planetary Society</a>
+                                <a href="https://iayc.org" target="_blank" className='text-secondary w-fit'>International Astronomical Youth Camp</a>
+                                <a href="https://www.marssociety.org" target="_blank" className='text-secondary w-fit'>Mars Society - USA</a>
+                                <a href="https://www.nss.org" target="_blank" className='text-secondary w-fit'>National Space Society - USA</a>
+                                <a href="https://skyandtelescope.org/" target="_blank" className='text-secondary w-fit'>Sky & Telescope</a>
+                                <a href="https://www.cloudynights.com/" target="_blank" className='text-secondary w-fit'>Cloudy Nights</a>
+                                <a href="http://seasky.org/astronomy/astronomy-calendar-current.html" target="_blank" className='text-secondary w-fit'>Astronomical Calendar</a>
+                                <a href="https://starlust.org" target="_blank" className='text-secondary w-fit'>Star Lust</a>
+                                <a href="https://www.universetoday.com/" target="_blank" className='text-secondary w-fit'>Universe Today</a>
+                                <a href="https://telescopicwatch.com" target="_blank" className='text-secondary w-fit'>Telescopic Watch</a>
+                                <a href="https://skymaps.com/" target="_blank" className='text-secondary w-fit'>Sky Maps</a>
+                                <a href="https://octaneseating.com/blog/astronomy-in-media/" target="_blank" className='text-secondary w-fit'>Astronomy in Media</a>
+                                <a href="https://blog.aaastateofplay.com/2022/02/astronomy-resources-for-kids.html" target="_blank" className='text-secondary w-fit'>Astronomy Resources for Kids</a>
+
                             </div>
 
                         </div>
