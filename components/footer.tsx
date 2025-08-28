@@ -18,7 +18,7 @@ export default function Footer() {
                     <div className='flex flex-col gap-3 items-center justify-center order-1 sm:order-2'>
                         <div className='text-md md:text-lg'> Stay Updated </div>
                         <Separator orientation='horizontal' className='hidden sm:block' />
-                        <div className='flex sm:flex-col gap-3 items-center'>
+                        <div className='flex flex-wrap justify-center sm:flex-col gap-3 items-center'>
                             <div className='flex items-center gap-2'>
                             <a href="https://discord.gg/vYsSzfnj" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                                 Discord
