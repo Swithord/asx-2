@@ -48,9 +48,9 @@ export default function Footer() {
                     </div>
                     <div className="flex-col justify-between hidden sm:flex">
                         <div>
-                            <div className='text-md md:text-lg'>Sign up and access our newsletter</div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform" target="_blank" rel="noopener noreferrer" className="text-lg text-secondary">
-                            Membership Registration Form
+                            <div className='text-md md:text-lg'>Become a member and access our newsletter!</div>
+                            <a href="/membership" className="text-lg bg-secondary p-1 text-background">
+                            Membership Registration
                             </a>
                         </div>
                         <div>

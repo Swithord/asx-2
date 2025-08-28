@@ -32,7 +32,7 @@ export default function About() {
                 </div>
                 <div className='w-full max-w-4xl flex-col sm:flex-row flex-grow flex gap-5 px-4 sm:gap-10 md:gap-15 justify-center'>
                     <div className='flex flex-col h-full w-full items-center self-start justify-start'>
-                        <a href='https://docs.google.com/forms/d/e/1FAIpQLScbjRnREhkQ-Mjv-mw8uGO5Jm03D7NjZTL_pEZQKMw2afP3Aw/viewform' className='bg-primary p-3 rounded rounded-lg text-lg text-background text-center md:text-xl'>Become a Member / Subscribe to our Newsletter!</a>
+                        <a href='/membership' className='bg-primary p-3 rounded rounded-lg text-lg text-background text-center md:text-xl'>Become a Member / Subscribe to our Newsletter!</a>
                         <div className='flex flex-col gap-5 w-full items-center pt-10'>
                             <div className='absolute -translate-y-1/2 z-10 px-4 bg-background'>
                                 <div className='text-xl md:text-2xl'>Contact Us</div>
@@ -41,7 +41,7 @@ export default function About() {
                                 <Image
                                     src={email}
                                     alt="Email"
-                                    className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                    className="object-cover w-8 h-8 icon-theme"
                                     width={30}
                                     height={30}
                                 />
@@ -58,7 +58,7 @@ export default function About() {
                                     <Image
                                         src={discord}
                                         alt="Discord"
-                                        className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                        className="object-cover w-8 h-8 icon-theme"
                                         width={30}
                                         height={30}
                                     />
@@ -69,7 +69,7 @@ export default function About() {
                                     <Image
                                         src={instagram}
                                         alt="Instagram"
-                                        className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                        className="object-cover w-8 h-8 icon-theme"
                                         width={30}
                                         height={30}
                                     />
@@ -79,7 +79,7 @@ export default function About() {
                                     <Image
                                         src={linkedin}
                                         alt="LinkedIn"
-                                        className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                        className="object-cover w-8 h-8 icon-theme"
                                         width={30}
                                         height={30}
                                     />
@@ -89,7 +89,7 @@ export default function About() {
                                     <Image
                                         src={facebook}
                                         alt="Facebook"
-                                        className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                        className="object-cover w-8 h-8 icon-theme"
                                         width={30}
                                         height={30}
                                     />
@@ -99,7 +99,7 @@ export default function About() {
                                     <Image
                                         src={youtube}
                                         alt="YouTube"
-                                        className="object-cover w-8 h-8 filter dark:brightness-0 dark:invert"
+                                        className="object-cover w-8 h-8 icon-theme"
                                         width={30}
                                         height={30}
                                     />
