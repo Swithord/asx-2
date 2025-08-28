@@ -20,8 +20,9 @@ interface SpeakerProps {
 }
 
 const Speaker = ({ name, bio, imageUrl }: SpeakerProps) => (
-    <div className="flex flex-col items-center w-36 h-full md:w-48 gap-3">
-        <div className="w-36 h-36 md:w-48 md:h-48 overflow-hidden rounded-full flex items-center justify-center">
+    <div className="flex flex-col items-center justify-between w-36 h-full md:w-48 gap-3">
+        <div className='flex flex-col gap-3'>
+            <div className="w-36 h-36 md:w-48 md:h-48 overflow-hidden rounded-full flex items-center justify-center">
             <Image
                 src={imageUrl}
                 alt={`${name}'s picture`}
@@ -31,8 +32,11 @@ const Speaker = ({ name, bio, imageUrl }: SpeakerProps) => (
             />
         </div>
             <h5 className="text-center text-lg md:text-xl">{name}</h5>
+        </div>
+        <div className='flex flex-col w-full gap-3'>
             <Separator orientation='horizontal' />
             <h6 className="text-center md:text-lg">{bio}</h6>
+        </div>
     </div>
 );
 
@@ -186,7 +190,7 @@ export default function Speakers() {
                         onClick={() => scrollContainer(1)}
                         // start hidden until the script decides
                         style={{ display: 'none' }}
-                        className="hidden md:flex absolute -right-2 sm:-right-4 md:-right-10 top-1/3 -translate-y-1/2 z-20 bg-white/70 hover:bg-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center text-2xl md:text-3xl leading-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary text-black"
+                        className="hidden md:flex absolute -right-2 sm:-right-4 md:-right-10 top-1/3 -translate-y-1/2 z-20 bg-white/70 hover:bg-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center text-2xl md:text-3xl leading-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary text-b"
                     >
                         <span className="leading-none align-middle">→</span>
                     </button>
