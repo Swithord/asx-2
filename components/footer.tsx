@@ -20,7 +20,7 @@ export default function Footer() {
                         <Separator orientation='horizontal' className='hidden sm:block' />
                         <div className='flex sm:flex-col gap-3 items-center'>
                             <div className='flex items-center gap-2'>
-                            <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
+                            <a href="https://discord.gg/vYsSzfnj" target="_blank" rel="noopener noreferrer" className="text-md md:text-lg text-secondary">
                                 Discord
                             </a>
                             <Badge variant={'default'} className='text-sm bg-foreground text-background'>New!</Badge>

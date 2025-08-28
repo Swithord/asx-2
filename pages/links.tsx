@@ -62,7 +62,7 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://discord.gg/your-discord-link" className='text-secondary'>Discord</a>
+                                    <a href="https://discord.gg/vYsSzfnj" className='text-secondary'>Discord</a>
                                     <Badge variant={'default'} className='text-sm bg-foreground text-background'>New!</Badge>
                                 </div>
                                 <div className='flex gap-3 w-full items-center'>
@@ -112,16 +112,16 @@ export default function About() {
                     <div className='flex flex-col h-full w-full items-center self-start justify-start'>
                         <div className='flex flex-col gap-5 w-full items-center pt-10'>
                             <div className='absolute -translate-y-1/2 z-10 px-4 bg-background'>
-                                <div className='text-xl md:text-2xl'>Astronomy Organizations / Resources</div>
+                                <div className='text-xl md:text-2xl'>Organizations / Resources</div>
                             </div>
                             <div className='flex flex-col gap-5 border rounded-lg border-gray-700 text-base md:text-lg p-6 sm:p-8 pt-10 items-left w-full'>
-                                <div className='text-lg md:text-xl'>UofT related</div>
+                                <div className='text-lg font-semibold md:text-xl'>UofT related</div>
                                 <a href="https://astro.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Department of Astronomy & Astrophysics</a>
                                 <li><a href="https://www.astro.utoronto.ca/astrotours/singlepage/discover/#:~:text=On%20the%20first%20Thursday%20of,or%20sign%2Dup%20is%20required." target="_blank" className='text-secondary w-fit'>Public Tours</a></li>
                                 <a href="https://www.dunlap.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Dunlap Institute for Astronomy & Astrophysics</a>
                                 <a href="https://mississauga.rasc.ca/" target="_blank" className='text-secondary w-fit'>Royal Astronomical Society (RASC) @ UofT Mississauga</a>
                                 <a href="https://www.utias.utoronto.ca/" target="_blank" className='text-secondary w-fit'>Institute for Aerospace Studies (UTIAS)</a>
-                                <div className='text-lg md:text-xl'>Canadian Astronomy & Space Groups</div>
+                                <div className='text-lg font-semibold md:text-xl'>Canadian Astronomy & Space Groups</div>
                                 <a href="https://astroatyork.wixsite.com/acyu" target="_blank" className='text-secondary w-fit'>Astronomy Club @ York University</a>
                                 <a href="https://www.casi.ca/" target="_blank" className='text-secondary w-fit'>Canadian Aeronautics & Space Institute (CASI)</a>
                                 <a href="https://www.css.ca/" target="_blank" className='text-secondary w-fit'>Canadian Space Society (CSS)</a>
@@ -129,7 +129,7 @@ export default function About() {
                                 <a href="https://www.nyaa.ca/" target="_blank" className='text-secondary w-fit'>North York Astronomical Association</a>
                                 <a href="https://rasc.ca/" target="_blank" className='text-secondary w-fit'>Royal Astronomical Society of Canada (RASC)</a>
                                 <a href="https://toronto.rasc.ca/" target="_blank" className='text-secondary w-fit'>RASC Toronto Centre</a>
-                                <div className='text-lg md:text-xl'>Other Resources</div>
+                                <div className='text-lg font-semibold md:text-xl'>Other Resources</div>
                                 <a href="https://www.asc-csa.gc.ca/eng/default.asp" target="_blank" className='text-secondary w-fit'>Canadian Space Agency (CSA)</a>
                                 <a href="https://www.astronomerswithoutborders.org/" target="_blank" className='text-secondary w-fit'>Astronomers without Borders</a>
                                 <a href="https://www.planetary.org/" target="_blank" className='text-secondary w-fit'>The Planetary Society</a>
