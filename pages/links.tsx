@@ -62,7 +62,7 @@ export default function About() {
                                         width={30}
                                         height={30}
                                     />
-                                    <a href="https://discord.gg/vYsSzfnj" className='text-secondary'>Discord</a>
+                                    <a href="https://discord.gg/mTZMCKWsjr" className='text-secondary'>Discord</a>
                                     <Badge variant={'default'} className='text-sm bg-foreground text-background'>New!</Badge>
                                 </div>
                                 <div className='flex gap-3 w-full items-center'>
