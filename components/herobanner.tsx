@@ -8,7 +8,7 @@ export default function HeroBanner() {
         <div
             className="w-full h-48 md:h-96 pt-2 flex relative text-white"
             style={{
-                backgroundImage: `url('banner.jpg')`,
+                backgroundImage: `url('banner-nov.jpg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
                 }}
@@ -29,15 +29,15 @@ export default function HeroBanner() {
             </div>
             <div className="hidden sm:flex absolute bottom-4 right-4 md:bottom-8 md:right-8 flex-col items-end gap-2">
                 <div className="text-lg w-full text-center">
-                    Image of the Month
+                    Image of the Month - Nov
                 </div>
-                <div className='text-center border-1 border-gray-700 rounded-md p-2 w-full'>
-                <div className='text-lg'>M16 - Eagle Nebula</div>
-                <div>Credit: York</div>
+                <div className='text-center border-1 border-gray-700 rounded-md p-2 w-full bg-black/30'>
+                <div className='text-lg'>NGC2244 - Rosette Nebula</div>
+                <div>Credit: Gavin Farley <span className='text-primary'>@gaviniwnl</span></div>
                 </div>
-                <div className='text-secondary'>
+                {/* <div className='text-secondary'>
                         (The next one can be yours!)
-                    </div>
+                    </div> */}
             </div>
         </div>
 
