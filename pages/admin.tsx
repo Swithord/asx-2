@@ -76,16 +76,22 @@ export default function Admin({ isAuthenticated }: AdminProps) {
     const handleCreatePost = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        let bannerUrl = '';
 
         try {
-            let bannerUrl = '';
             
             // Upload banner image if provided
             if (bannerFile) {
                 toast.info('Uploading image...');
                 bannerUrl = await uploadImage(bannerFile);
             }
+        } catch (error) {
+            toast.error('Image upload failed: ' + (error instanceof Error ? error.message : 'Unknown error'));
+            setIsSubmitting(false);
+            return;
+        }
 
+        try {
             // Create the post
             toast.info('Creating post...');
             await createPost({
@@ -104,7 +110,7 @@ export default function Admin({ isAuthenticated }: AdminProps) {
             setBannerFile(null);
             setIsDialogOpen(false);
         } catch (error) {
-            toast.error('Failed to create post. Please try again.');
+            toast.error('Failed to create post: ' + (error instanceof Error ? error.message : 'Unknown error'));
             console.error('Error creating post:', error);
         } finally {
             setIsSubmitting(false);
