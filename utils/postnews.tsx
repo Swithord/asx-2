@@ -7,22 +7,43 @@ interface Post {
     bannerUrl: string;
 }
 
-export async function uploadImage(file: any) {
-    // const token = getToken();
-  
+export async function uploadImage(file: File) {
+  try {
+    // Get the presigned URL from your API
     const res = await fetch('https://tosiig6pwc.execute-api.us-east-2.amazonaws.com/default/image-upload', {
       method: 'POST',
-    //   headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
+
+    if (!res.ok) {
+      throw new Error(`Failed to get upload URL: ${res.status} ${res.statusText}`);
+    }
+
     const { uploadUrl, imageUrl } = await res.json();
-  
-    await fetch(uploadUrl, {
+
+    if (!uploadUrl || !imageUrl) {
+      throw new Error('Invalid response from image upload API');
+    }
+
+    const uploadRes = await fetch(uploadUrl, {
       method: 'PUT',
-      headers: { 'Content-Type': 'image/jpeg' },
+      headers: {
+        'Content-Type': file.type,
+      },
       body: file,
     });
-  
+
+    if (!uploadRes.ok) {
+      throw new Error(`Failed to upload image: ${uploadRes.status} ${uploadRes.statusText}`);
+    }
+
     return imageUrl;
+  } catch (error) {
+    console.error('Image upload error:', error);
+    throw error;
+  }
 }
 
 export async function createPost({ key, title, content, bannerUrl }: Post) {
