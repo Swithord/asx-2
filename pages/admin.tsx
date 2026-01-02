@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
-import { useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { verifyToken } from '@/utils/auth';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -9,9 +10,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
-import { uploadImage, createPost } from '@/utils/postnews';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Info, InfoIcon } from 'lucide-react';
+import { InfoIcon, Pencil } from 'lucide-react';
+import { Article, editArticle, fetchNews, getArticle } from './api/news';
+import { createPost, uploadImage } from '@/utils/postnews';
 
 interface AdminProps {
   isAuthenticated: boolean;
@@ -34,13 +36,39 @@ export default function Admin({ isAuthenticated }: AdminProps) {
     const [isLoading, setIsLoading] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     
-    // Post form state
     const [postKey, setPostKey] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [bannerFile, setBannerFile] = useState<File | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const [articles, setArticles] = useState<Article[]>([]);
+    const [loadingArticles, setLoadingArticles] = useState(false);
+    const [nextKey, setNextKey] = useState<string | undefined>();
+
+    const [editingArticle, setEditingArticle] = useState<Article | null>(null);
+    const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            loadArticles();
+        }
+    }, [isAuthenticated]);
+
+    const loadArticles = async () => {
+        try {
+            setLoadingArticles(true);
+            const data = await fetchNews(50); // Load more articles for admin view
+            setArticles(data.items);
+            setNextKey(data.nextKey);
+        } catch (error) {
+            toast.error('Failed to load articles');
+            console.error('Error loading articles:', error);
+        } finally {
+            setLoadingArticles(false);
+        }
+    };
+    
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
@@ -112,6 +140,65 @@ export default function Admin({ isAuthenticated }: AdminProps) {
         } catch (error) {
             toast.error('Failed to create post: ' + (error instanceof Error ? error.message : 'Unknown error'));
             console.error('Error creating post:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    const handleEditClick = async (article: Article) => {
+        let fullArticle = await getArticle(article.key);
+        if (!fullArticle) {
+            toast.error('Failed to load article for editing');
+            return;
+        }
+        setEditingArticle(article);
+        setTitle(article.title);
+        setContent(fullArticle.content);
+        setBannerFile(null);
+        setIsEditDialogOpen(true);
+    };
+
+    const handleEditPost = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!editingArticle) return;
+        
+        setIsSubmitting(true);
+        let bannerUrl = editingArticle.bannerUrl;
+
+        try {
+            // Upload new banner image if provided
+            if (bannerFile) {
+                toast.info('Uploading image...');
+                bannerUrl = await uploadImage(bannerFile);
+            }
+        } catch (error) {
+            toast.error('Image upload failed: ' + (error instanceof Error ? error.message : 'Unknown error'));
+            setIsSubmitting(false);
+            return;
+        }
+
+        try {
+            toast.info('Updating post...');
+            await editArticle(editingArticle.key, {
+                title,
+                content,
+                bannerUrl,
+            });
+
+            toast.success('Post updated successfully!');
+            
+            // Reset form
+            setEditingArticle(null);
+            setTitle('');
+            setContent('');
+            setBannerFile(null);
+            setIsEditDialogOpen(false);
+
+            // Reload articles
+            loadArticles();
+        } catch (error) {
+            toast.error('Failed to update post: ' + (error instanceof Error ? error.message : 'Unknown error'));
+            console.error('Error updating post:', error);
         } finally {
             setIsSubmitting(false);
         }
@@ -246,6 +333,106 @@ export default function Admin({ isAuthenticated }: AdminProps) {
                                 </DialogContent>
                             </Dialog>
                         </div>
+                        <div className="w-full space-y-4">
+                    <div className="text-2xl font-semibold">All Articles</div>
+                    {loadingArticles ? (
+                        <div className="text-center py-8">Loading articles...</div>
+                    ) : (
+                        <div className="space-y-2">
+                            {articles.map((article) => (
+                                <div
+                                    key={article.key}
+                                    className="flex items-center gap-4 p-3 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors"
+                                >
+                                    <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">
+                                        <Image
+                                            src={article.bannerUrl}
+                                            alt={article.title}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="font-semibold truncate">{article.title}</h3>
+                                        <p className="text-sm text-gray-400 truncate">{article.content}</p>
+                                    </div>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onClick={() => handleEditClick(article)}
+                                        className="flex-shrink-0"
+                                    >
+                                        <Pencil className="h-4 w-4" />
+                                    </Button>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                        <DialogHeader>
+                            <DialogTitle>Edit Post</DialogTitle>
+                            <DialogDescription>
+                                Update the post details
+                            </DialogDescription>
+                        </DialogHeader>
+                        <form onSubmit={handleEditPost} className="space-y-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="edit-title">Title</Label>
+                                <Input
+                                    id="edit-title"
+                                    placeholder="Post title"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    required
+                                    disabled={isSubmitting}
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="edit-content">Content</Label>
+                                <Textarea
+                                    id="edit-content"
+                                    placeholder="Post content..."
+                                    value={content}
+                                    onChange={(e) => setContent(e.target.value)}
+                                    required
+                                    disabled={isSubmitting}
+                                    rows={8}
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="edit-banner">Banner Image (leave empty to keep current)</Label>
+                                <Input
+                                    id="edit-banner"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    disabled={isSubmitting}
+                                />
+                            </div>
+                            <div className="flex justify-end gap-2">
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={() => {
+                                        setIsEditDialogOpen(false);
+                                        setEditingArticle(null);
+                                        setTitle('');
+                                        setContent('');
+                                        setBannerFile(null);
+                                    }}
+                                    disabled={isSubmitting}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button type="submit" disabled={isSubmitting}>
+                                    {isSubmitting ? 'Updating...' : 'Update Post'}
+                                </Button>
+                            </div>
+                        </form>
+                    </DialogContent>
+                </Dialog>
             </div>
             <Footer />
         </div>

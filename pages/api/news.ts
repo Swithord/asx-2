@@ -151,3 +151,32 @@ export async function getArticle(key: string): Promise<Article | null> {
         content: String(data.content ?? ''),
     };
 }
+
+export async function editArticle(
+    key: string,
+    updates: Partial<Pick<Article, 'title' | 'content' | 'bannerUrl'>>
+): Promise<Article> {
+    const res = await fetch('https://tosiig6pwc.execute-api.us-east-2.amazonaws.com/default/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key, ...updates }),
+    });
+
+    if (!res.ok) {
+        const body = await res.text().catch(() => '');
+        throw new Error(`Failed to edit article: ${res.status} ${res.statusText}${body ? ` - ${body}` : ''}`);
+    }
+
+    const data = await res.json().catch(() => null);
+    if (!data) {
+        throw new Error('No data returned from edit article request');
+    }
+
+    return {
+        title: String(data.title ?? ''),
+        key: String(data.key ?? ''),
+        timestamp: String(data.timestamp ?? ''),
+        bannerUrl: String(data.bannerUrl ?? ''),
+        content: String(data.content ?? ''),
+    };
+}
