@@ -116,7 +116,7 @@ export default function SEDS() {
   return (
     <div className='max-w-7xl mx-auto'>
       <Navbar />
-      <div className='container flex flex-col items-center justify-between min-h-screen mx-auto gap-8 md:gap-12 pb-8'>
+      <div className='flex flex-col items-center justify-between min-h-screen mx-auto gap-8 md:gap-12 pb-8'>
         
         {/* Hero Section */}
         <div className="w-full flex justify-center items-center max-h-64 overflow-hidden relative">
@@ -141,26 +141,27 @@ export default function SEDS() {
 
         {/* <Separator className="bg-gray-700" /> */}
 
-        {/* Mission Section */}
-        <div className='flex flex-col gap-5 items-center w-full max-w-4xl'>
-          <div className='flex items-center gap-3'>
-            <MoonStar className="w-8 h-8 text-primary" />
-            <h2 className='text-3xl md:text-4xl'>Our Mission</h2>
-          </div>
-          <div className='border rounded-lg border-gray-700 p-6 md:p-8'>
-            <div className='text-lg md:text-xl'>
-              To <span className='text-primary'>educate</span>, <span className='text-primary'>excite</span>, and <span className='text-primary'>inspire</span> students, professionals, and the general public about astronomy and space.
+        <div className='container px-4'>
+          {/* Mission Section */}
+          <div className='flex flex-col gap-5 items-center w-full max-w-4xl mx-auto'>
+            <div className='flex items-center gap-3'>
+              <MoonStar className="w-8 h-8 text-primary" />
+              <h2 className='text-3xl md:text-4xl'>Our Mission</h2>
+            </div>
+            <div className='border rounded-lg border-gray-700 p-6 md:p-8'>
+              <div className='text-lg md:text-xl'>
+                To <span className='text-primary'>educate</span>, <span className='text-primary'>excite</span>, and <span className='text-primary'>inspire</span> students, professionals, and the general public about astronomy and space.
+              </div>
+            </div>
+            <div className='text-base md:text-lg text-gray-400 text-center'>
+              Founded in <span className='text-primary'>2003</span>, ASX is a non-profit organization run by the University of Toronto undergraduate space community. We organize numerous high-profile events with distinguished speakers, including astronauts, astronomers, and space entrepreneurs.
             </div>
           </div>
-          <div className='text-base md:text-lg text-gray-400 text-center'>
-            Founded in <span className='text-primary'>2003</span>, ASX is a non-profit organization run by the University of Toronto undergraduate space community. We organize numerous high-profile events with distinguished speakers, including astronauts, astronomers, and space entrepreneurs.
-          </div>
-        </div>
 
-        <Separator className="bg-gray-700" />
+          <Separator className="bg-gray-700 my-8 md:my-12" />
 
-        {/* Events Section */}
-        <div className='flex flex-col gap-5 items-center w-full max-w-4xl'>
+          {/* Events Section */}
+          <div className='flex flex-col gap-5 items-center w-full max-w-4xl mx-auto'>
           <div className='flex items-center gap-3'>
             <Telescope className="w-8 h-8 text-primary" />
             <h2 className='text-3xl md:text-4xl'>Our Events</h2>
@@ -178,12 +179,12 @@ export default function SEDS() {
               />
             ))}
           </div>
-        </div>
+          </div>
 
-        <Separator className="bg-gray-700" />
+          <Separator className="bg-gray-700 my-8 md:my-12" />
 
-        {/* Featured Speakers Section */}
-        <div className='flex flex-col gap-5 items-center w-full max-w-4xl'>
+          {/* Featured Speakers Section */}
+          <div className='flex flex-col gap-5 items-center w-full max-w-4xl mx-auto'>
           <h2 className='text-3xl md:text-4xl'>Past Speakers</h2>
           <p className='text-base md:text-lg text-center text-gray-400'>
             We've been honored to host world-renowned speakers from the space and astronomy community
@@ -200,12 +201,12 @@ export default function SEDS() {
               ))}
             </div>
           </div>
-        </div>
+          </div>
 
-        <Separator className="bg-gray-700" />
+          <Separator className="bg-gray-700 my-8 md:my-12" />
 
-        {/* Sponsorship Section */}
-        <div className='flex flex-col gap-5 items-center w-full max-w-4xl'>
+          {/* Sponsorship Section */}
+          <div className='flex flex-col gap-5 items-center w-full max-w-4xl mx-auto'>
           <h2 className='text-3xl md:text-4xl'>Sponsorship</h2>
           <div className='text-base md:text-lg text-center text-gray-400'>
             ASX relies on external sponsorships to continue informing society about astronomy and space exploration. By sponsoring us, you or your company can be involved with a non-profit organization that strives to share the excitement of space with the public!
@@ -242,12 +243,12 @@ export default function SEDS() {
               Learn More About Sponsorship
             </a>
           </div>
-        </div>
+          </div>
 
-        <Separator className="bg-gray-700" />
+          <Separator className="bg-gray-700 my-8 md:my-12" />
 
-        {/* Contact & Socials Section */}
-        <div className='flex flex-col gap-5 items-center w-full max-w-4xl'>
+          {/* Contact & Socials Section */}
+          <div className='flex flex-col gap-5 items-center w-full max-w-4xl mx-auto'>
           <div className='flex items-center gap-3'>
             <Mail className="w-8 h-8 text-primary" />
             <h2 className='text-3xl md:text-4xl'>Connect With Us</h2>
@@ -306,10 +307,8 @@ export default function SEDS() {
               Subscribe to Newsletter
             </a>
           </div>
+          </div>
         </div>
-
-        <Separator className="bg-gray-700" />
-
       </div>
       <Footer />
     </div>
