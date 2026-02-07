@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GetServerSideProps } from "next";
 import HeroBanner from "@/components/herobanner";
+import SymposiumAnnouncement from "@/components/symposium-announcement";
 import Mission from "@/components/mission";
 import Latest from "@/components/latest";
 import Events from "@/components/events";
@@ -22,6 +23,7 @@ export default function Home({ news }: HomeProps) {
       <Navbar />
       <div className='container flex flex-col items-center justify-center min-h-screen px-4 pb-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
       <HeroBanner />
+            <SymposiumAnnouncement />
             <Mission />
             <Latest news={news} />
             <Events />
