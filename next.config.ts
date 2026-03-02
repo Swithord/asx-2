@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/restless',
+        destination: 'https://www.eventbrite.com/e/the-restless-universe-cosmic-bursts-and-transients-asx-22nd-symposium-tickets-1982334742578?aff=oddtdtcreator',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
