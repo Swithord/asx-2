@@ -26,6 +26,11 @@ const nextConfig: NextConfig = {
         destination: 'https://www.eventbrite.com/e/the-restless-universe-cosmic-bursts-and-transients-asx-22nd-symposium-tickets-1982334742578?aff=oddtdtcreator',
         permanent: false,
       },
+      {
+        source: '/nominate',
+        destination: 'https://forms.gle/s4ZnBeeBVNJfVcew8',
+        permanent: false,
+      }
     ];
   },
 };
