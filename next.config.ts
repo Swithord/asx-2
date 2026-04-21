@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
         source: '/nominate',
         destination: 'https://forms.gle/s4ZnBeeBVNJfVcew8',
         permanent: false,
+      },
+      {
+        source: '/vote',
+        destination: 'https://docs.google.com/forms/d/e/1FAIpQLSdJY7_vJm2o-_dYrWpsr229eGCyy0zCQ4NlbL4iQOs1DSGfmg/viewform',
+        permanent: false,
       }
     ];
   },
