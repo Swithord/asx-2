@@ -23,7 +23,7 @@ export default function Home({ news }: HomeProps) {
       <Navbar />
       <div className='container flex flex-col items-center justify-center min-h-screen px-4 pb-8 mx-auto gap-5 sm:gap-10 md:gap-15'>
       <HeroBanner />
-            <SymposiumAnnouncement />
+            {/* <SymposiumAnnouncement /> */}
             <Mission />
             <Latest news={news} />
             <Events />
