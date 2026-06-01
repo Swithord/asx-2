@@ -1,8 +1,6 @@
-import FormfacadeEmbed from "@formfacade/embed-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Users } from "lucide-react";
-import { toast } from "sonner"
 import membership from '../assets/membership.jpg';
 import Image from "next/image";
 
@@ -38,11 +36,15 @@ export default function Membership() {
                     <Users className="w-8 h-8 text-gray-500" />
 
                     {/* Form Section */}
-                    <div className='w-full max-w-4xl'>
-                        <FormfacadeEmbed
-                            formFacadeURL="https://formfacade.com/include/106124237628194995216/form/1FAIpQLSds1kWl9mzx4UYoiUR9OKBf8cBIDVsiEXC9QQ4k2n5h8QxxVQ/classic.js/?div=ff-compose"
-                            onSubmitForm={() => toast.success('Form submitted successfully! Thank you for joining ASX!')}
-                        />
+                    <div className='w-full max-w-4xl flex justify-center'>
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSds1kWl9mzx4UYoiUR9OKBf8cBIDVsiEXC9QQ4k2n5h8QxxVQ/viewform?embedded=true"
+                            width="640"
+                            height="2334"
+                            style={{ border: 0, margin: 0 }}
+                        >
+                            Loading…
+                        </iframe>
                     </div>
 
                     {/* Benefits Section */}

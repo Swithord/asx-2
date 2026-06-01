@@ -130,13 +130,14 @@ export default function Admin({ isAuthenticated }: AdminProps) {
             });
 
             toast.success('Post created successfully!');
-            
+
             // Reset form
             setPostKey('');
             setTitle('');
             setContent('');
             setBannerFile(null);
             setIsDialogOpen(false);
+            loadArticles();
         } catch (error) {
             toast.error('Failed to create post: ' + (error instanceof Error ? error.message : 'Unknown error'));
             console.error('Error creating post:', error);
@@ -150,7 +151,9 @@ export default function Admin({ isAuthenticated }: AdminProps) {
         try {
             const res = await fetch(`/api/posts/${encodeURIComponent(article.key)}`, { method: 'DELETE' });
             if (!res.ok) throw new Error('Failed to delete');
-            toast.success('Post deleted');
+            const { warning } = await res.json();
+            if (warning) toast.warning(warning);
+            else toast.success('Post deleted');
             setArticles(prev => prev.filter(a => a.key !== article.key));
         } catch {
             toast.error('Failed to delete post');

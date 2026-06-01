@@ -46,18 +46,14 @@ export function markdownToPlainText(md: string): string {
 }
 
 async function readIndex(): Promise<Article[]> {
-    try {
-        const { blobs } = await list({ prefix: INDEX_PATH });
-        if (!blobs.length) return [];
-        const latest = blobs.sort((a, b) =>
-            new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
-        )[0];
-        const res = await fetch(latest.url, { cache: 'no-store' });
-        if (!res.ok) return [];
-        return await res.json();
-    } catch {
-        return [];
-    }
+    const { blobs } = await list({ prefix: INDEX_PATH });
+    if (!blobs.length) return [];
+    const latest = blobs.sort((a, b) =>
+        new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
+    )[0];
+    const res = await fetch(`${latest.url}?_=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Failed to fetch index: ${res.status}`);
+    return await res.json();
 }
 
 async function writeIndex(articles: Article[]): Promise<void> {
@@ -65,6 +61,7 @@ async function writeIndex(articles: Article[]): Promise<void> {
         access: 'public',
         contentType: 'application/json',
         addRandomSuffix: false,
+        allowOverwrite: true,
     });
 }
 
@@ -88,7 +85,7 @@ export async function getArticleBlob(key: string): Promise<Article | null> {
         const latest = blobs.sort((a, b) =>
             new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
         )[0];
-        const res = await fetch(latest.url, { cache: 'no-store' });
+        const res = await fetch(`${latest.url}?_=${Date.now()}`, { cache: 'no-store' });
         if (!res.ok) return null;
         return await res.json();
     } catch {
@@ -103,6 +100,7 @@ export async function createArticleBlob(article: Omit<Article, 'timestamp'>): Pr
         access: 'public',
         contentType: 'application/json',
         addRandomSuffix: false,
+        allowOverwrite: true,
     });
 
     const index = await readIndex();
@@ -112,13 +110,21 @@ export async function createArticleBlob(article: Omit<Article, 'timestamp'>): Pr
     return full;
 }
 
-export async function deleteArticleBlob(key: string): Promise<void> {
-    const { blobs } = await list({ prefix: `posts/${key}.json` });
-    if (blobs.length) await del(blobs.map(b => b.url));
+export async function deleteArticleBlob(key: string): Promise<{ warning?: string }> {
+    let warning: string | undefined;
+
+    try {
+        const { blobs } = await list({ prefix: `posts/${key}.json` });
+        if (blobs.length) await del(blobs.map(b => b.url));
+    } catch (err) {
+        warning = `Post removed from index but blob file could not be deleted: ${(err as Error).message}`;
+    }
 
     const index = await readIndex();
     const filtered = index.filter(a => a.key !== key);
     if (filtered.length !== index.length) await writeIndex(filtered);
+
+    return warning ? { warning } : {};
 }
 
 export async function editArticleBlob(
@@ -134,6 +140,7 @@ export async function editArticleBlob(
         access: 'public',
         contentType: 'application/json',
         addRandomSuffix: false,
+        allowOverwrite: true,
     });
 
     const index = await readIndex();

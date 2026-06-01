@@ -158,7 +158,7 @@ export default function News() {
                                                     src={article.bannerUrl}
                                                     alt={article.title}
                                                     fill
-                                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                                    className="object-cover transition-transform duration-300"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                             </div>
@@ -196,7 +196,7 @@ export default function News() {
                                 <Button
                                     onClick={loadMoreNews}
                                     disabled={loadingMore}
-                                    className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/90 to-primary hover:from-primary hover:to-primary/80 text-black text-lg md:text-xl rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                                    className="group inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-primary/90 to-primary hover:from-primary hover:to-primary/80 text-black text-lg md:text-xl rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
                                     {loadingMore ? (
                                         <>
