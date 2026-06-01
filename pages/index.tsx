@@ -10,7 +10,7 @@ import AboutUs from "@/components/aboutus";
 import Speakers from "@/components/speakers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { fetchNews, Article } from "./api/news";
+import { getIndex, type Article } from "@/utils/storage";
 import Link from "next/link";
 
 interface HomeProps {
@@ -57,7 +57,7 @@ export default function Home({ news }: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const newsData = await fetchNews(3);
+    const newsData = await getIndex(3);
     return {
       props: {
         news: newsData.items,

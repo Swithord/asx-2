@@ -47,11 +47,11 @@ export default function Latest({ news }: LatestProps) {
     return (
         <div className="container flex flex-col gap-5">
             <h1 className="text-3xl md:text-4xl">Latest</h1>
-            <div className="flex gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:-mx-4 px-4 md:px-0 py-2">
+            <div className="flex items-stretch gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:-mx-4 px-4 md:px-0 py-2">
                 {news.map((item) => (
-                    <Link key={item.key} href={`/news/${item.key}`}>
+                    <Link key={item.key} href={`/news/${item.key}`} className="w-[280px] md:w-[320px] flex-shrink-0 lg:flex-1 lg:w-auto flex flex-col snap-start">
                         <div
-                            className="group min-w-[280px] md:min-w-[320px] lg:min-w-0 lg:flex-1 snap-start flex flex-col md:flex-row border border-gray-700/50 rounded-xl p-4 md:p-5 transform transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl hover:shadow-black/10 hover:-translate-y-2 hover:border-gray-600 cursor-pointer bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
+                            className="group h-full flex flex-col md:flex-row border border-gray-700/50 rounded-xl p-4 md:p-5 transform transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl hover:shadow-black/10 hover:-translate-y-2 hover:border-gray-600 cursor-pointer bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
                         >
                             {/* Mobile: Image at top, Desktop: Image on left */}
                             <div className="flex flex-col md:flex-col md:justify-between mb-4 md:mb-0 md:mr-4">

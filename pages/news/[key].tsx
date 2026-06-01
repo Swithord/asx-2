@@ -6,8 +6,7 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { getArticle, Article } from '../api/news';
-import ReactMarkdown from 'react-markdown'
+import { getArticleBlob, type Article } from '@/utils/storage';
 import Markdown from 'react-markdown';
 
 interface ArticlePageProps {
@@ -190,7 +189,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const { key } = context.params!;
     
     try {
-        const article = await getArticle(key as string);
+        const article = await getArticleBlob(key as string);
         
         if (!article) {
             return {

@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { InfoIcon, Pencil } from 'lucide-react';
+import { InfoIcon, Pencil, Trash2 } from 'lucide-react';
 import { Article, editArticle, fetchNews, getArticle } from './api/news';
 import { createPost, uploadImage } from '@/utils/postnews';
 
@@ -142,6 +142,18 @@ export default function Admin({ isAuthenticated }: AdminProps) {
             console.error('Error creating post:', error);
         } finally {
             setIsSubmitting(false);
+        }
+    };
+
+    const handleDeleteClick = async (article: Article) => {
+        if (!confirm(`Delete "${article.title}"? This cannot be undone.`)) return;
+        try {
+            const res = await fetch(`/api/posts/${encodeURIComponent(article.key)}`, { method: 'DELETE' });
+            if (!res.ok) throw new Error('Failed to delete');
+            toast.success('Post deleted');
+            setArticles(prev => prev.filter(a => a.key !== article.key));
+        } catch {
+            toast.error('Failed to delete post');
         }
     };
 
@@ -363,6 +375,14 @@ export default function Admin({ isAuthenticated }: AdminProps) {
                                         className="flex-shrink-0"
                                     >
                                         <Pencil className="h-4 w-4" />
+                                    </Button>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onClick={() => handleDeleteClick(article)}
+                                        className="flex-shrink-0 text-red-500 hover:text-red-400 hover:bg-red-500/10"
+                                    >
+                                        <Trash2 className="h-4 w-4" />
                                     </Button>
                                 </div>
                             ))}
